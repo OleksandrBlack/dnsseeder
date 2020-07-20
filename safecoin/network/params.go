@@ -11,21 +11,21 @@ var (
 	regtestParams = chaincfg.Params{
 		Name:        "regtest",
 		Net:         wire.BitcoinNet(Regtest),
-		DefaultPort: "18344",
+		DefaultPort: "17779",
 	}
 
 	// These are not fully valid chainparams, but they'll do for a seeder.
 	mainnetParams = chaincfg.Params{
 		Name:        "mainnet",
 		Net:         wire.BitcoinNet(Mainnet),
-		DefaultPort: "8233",
+		DefaultPort: "8770",
 	}
 
 	// These are not fully valid chainparams, but they'll do for a seeder.
 	testnetParams = chaincfg.Params{
 		Name:        "testnet",
 		Net:         wire.BitcoinNet(Testnet),
-		DefaultPort: "18233",
+		DefaultPort: "18770",
 	}
 )
 

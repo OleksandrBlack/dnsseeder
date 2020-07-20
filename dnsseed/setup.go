@@ -13,8 +13,8 @@ import (
 	"github.com/coredns/coredns/plugin"
 	clog "github.com/coredns/coredns/plugin/pkg/log"
 
-	"github.com/zcashfoundation/dnsseeder/zcash"
-	"github.com/zcashfoundation/dnsseeder/zcash/network"
+	"github.com/OleksandrBlack/dnsseeder/safecoin"
+	"github.com/OleksandrBlack/dnsseeder/safecoin/network"
 )
 
 const pluginName = "dnsseed"
@@ -56,7 +56,7 @@ func setup(c *caddy.Controller) error {
 
 	// TODO If we wanted to register Prometheus metrics, this would be the place.
 
-	seeder, err := zcash.NewSeeder(opts.networkMagic)
+	seeder, err := safecoin.NewSeeder(opts.networkMagic)
 	if err != nil {
 		return plugin.Error(pluginName, err)
 	}
@@ -111,7 +111,7 @@ func setup(c *caddy.Controller) error {
 
 	// Add the Plugin to CoreDNS, so Servers can use it in their plugin chain.
 	dnsserver.GetConfig(c).AddPlugin(func(next plugin.Handler) plugin.Handler {
-		return ZcashSeeder{
+		return SafecoinSeeder{
 			Next:   next,
 			Zones:  []string{zone.Hostname()},
 			seeder: seeder,
@@ -181,7 +181,7 @@ func parseConfig(c *caddy.Controller) (*options, error) {
 	return opts, nil
 }
 
-func runCrawl(name string, seeder *zcash.Seeder) {
+func runCrawl(name string, seeder *safecoin.Seeder) {
 	start := time.Now()
 
 	// Make sure our addresses are still live and leave the connections open

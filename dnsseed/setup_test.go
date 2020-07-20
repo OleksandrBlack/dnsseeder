@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/caddyserver/caddy"
-	"github.com/zcashfoundation/dnsseeder/zcash/network"
+	"github.com/OleksandrBlack/dnsseeder/safecoin/network"
 )
 
 // TestSetup tests the various things that should be parsed by setup.
@@ -33,21 +33,21 @@ func TestSetup(t *testing.T) {
 		{`dnsseed { 
 			network testnet
 			crawl_interval
-			bootstrap_peers 127.0.0.1:8233
+			bootstrap_peers 127.0.0.1:8770
 			}`, 
 			false, 0, 0, []string{}, 0,
 		},
 		{`dnsseed { 
 			network testnet
 			crawl_interval 15s
-			bootstrap_peers 127.0.0.1:8233
+			bootstrap_peers 127.0.0.1:8770
 			}`, 
-			true, network.Testnet, time.Duration(15) * time.Second, []string{"127.0.0.1:8233"}, defaultTTL,
+			true, network.Testnet, time.Duration(15) * time.Second, []string{"127.0.0.1:8770"}, defaultTTL,
 		},
 		{`dnsseed { 
 			network testnet
 			crawl_interval 15s
-			bootstrap_peers 127.0.0.1:8233
+			bootstrap_peers 127.0.0.1:8770
 			boop snoot every 15s
 			}`, 
 			false, 0, 0, []string{}, 0,
@@ -55,10 +55,10 @@ func TestSetup(t *testing.T) {
 		{`dnsseed { 
 			network mainnet
 			crawl_interval 30m
-			bootstrap_peers 127.0.0.1:8233 127.0.0.2:8233
+			bootstrap_peers 127.0.0.1:8770 127.0.0.2:8770
 			record_ttl 300
 			}`, 
-			true, network.Mainnet, time.Duration(30) * time.Minute, []string{"127.0.0.1:8233", "127.0.0.2:8233"}, 300,
+			true, network.Mainnet, time.Duration(30) * time.Minute, []string{"127.0.0.1:8770", "127.0.0.2:8770"}, 300,
 		},
 	}
 

@@ -1,4 +1,4 @@
-package zcash
+package safecoin
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 	"github.com/btcsuite/btcd/peer"
 	"github.com/btcsuite/btcd/wire"
 	"github.com/btcsuite/btclog"
-	"github.com/zcashfoundation/dnsseeder/zcash/network"
+	"github.com/OleksandrBlack/dnsseeder/safecoin/network"
 )
 
 func TestMain(m *testing.M) {
@@ -46,7 +46,7 @@ func startMockLoop() error {
 			time.Now(),
 			0,
 			net.ParseIP("127.0.0.1"),
-			uint16(18233),
+			uint16(18770),
 		)
 
 		// This will be an unusable peer (bs port)

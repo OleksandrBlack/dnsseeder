@@ -1,22 +1,22 @@
-# Zcash DNS seeder
+# Safecoin DNS seeder
 
-This is a CoreDNS plugin that scrapes addresses of peers from a Zcash network. It's intended as a safer, more configurable, and more scalable replacement for the [zcash-seeder](https://github.com/zcash/zcash-seeder) project.
+This is a CoreDNS plugin that scrapes addresses of peers from a Safecoin network. It's intended as a safer, more configurable, and more scalable replacement for the [safecoin-seeder](https://github.com/safecoin/safecoin-seeder) project.
 
 It's written in Go and uses [btcsuite](https://github.com/btcsuite) for low-level networking.
 
 ## Build instructions
 
-This code cannot be used independently of CoreDNS. See [coredns-zcash](https://github.com/ZcashFoundation/coredns-zcash) for instructions.
+This code cannot be used independently of CoreDNS. See [coredns-safecoin](https://github.com/OleksandrBlack/coredns-safecoin) for instructions.
 
 ## CoreDNS configuration
 
-A sample Corefile that configures seeders on a domain for each network, using two local Zcash nodes for bootstrap:
+A sample Corefile that configures seeders on a domain for each network, using two local Safecoin nodes for bootstrap:
 
 ```
 mainnet.seeder.example.com {
     dnsseed {
         network mainnet
-        bootstrap_peers 127.0.0.1:8233
+        bootstrap_peers 127.0.0.1:8770
         crawl_interval 30m
         record_ttl 600
     }
@@ -25,7 +25,7 @@ mainnet.seeder.example.com {
 testnet.seeder.example.com {
     dnsseed {
         network testnet
-        bootstrap_peers 127.0.0.1:18233
+        bootstrap_peers 127.0.0.1:18770
         crawl_interval 15m
         record_ttl 300
     }

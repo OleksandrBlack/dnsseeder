@@ -1,4 +1,4 @@
-package zcash
+package safecoin
 
 import (
 	"log"
@@ -14,7 +14,7 @@ import (
 	"github.com/btcsuite/btcd/peer"
 	"github.com/btcsuite/btcd/wire"
 
-	"github.com/zcashfoundation/dnsseeder/zcash/network"
+	"github.com/OleksandrBlack/dnsseeder/safecoin/network"
 
 	"github.com/pkg/errors"
 )
@@ -27,12 +27,12 @@ var (
 )
 
 var defaultPeerConfig = &peer.Config{
-	UserAgentName:    "zfnd-seeder",
+	UserAgentName:    "safe-seeder",
 	UserAgentVersion: "0.1.2",
 	ChainParams:      nil,
 	Services:         0,
 	TrickleInterval:  time.Second * 10,
-	ProtocolVersion:  170011, // Heartwood
+	ProtocolVersion:  170022, // SafeNode
 }
 
 var (
@@ -58,7 +58,7 @@ var (
 	blacklistDropTime = 3 * 24 * time.Hour
 )
 
-// Seeder contains all of the state and configuration needed to request addresses from Zcash peers and present them to a DNS provider.
+// Seeder contains all of the state and configuration needed to request addresses from Safecoin peers and present them to a DNS provider.
 type Seeder struct {
 	peer   *peer.Peer
 	config *peer.Config
@@ -84,8 +84,8 @@ func NewSeeder(network network.Network) (*Seeder, error) {
 	}
 
 	sink, _ := os.OpenFile(os.DevNull, os.O_WRONLY, 0666)
-	logger := log.New(sink, "zcash_seeder: ", log.Ldate|log.Ltime|log.Lshortfile|log.LUTC)
-	// logger := log.New(os.Stdout, "zcash_seeder: ", log.Ldate|log.Ltime|log.Lshortfile|log.LUTC)
+	logger := log.New(sink, "safecoin_seeder: ", log.Ldate|log.Ltime|log.Lshortfile|log.LUTC)
+	// logger := log.New(os.Stdout, "safecoin_seeder: ", log.Ldate|log.Ltime|log.Lshortfile|log.LUTC)
 
 	newSeeder := Seeder{
 		config:           config,
@@ -110,8 +110,8 @@ func newTestSeeder(network network.Network) (*Seeder, error) {
 	}
 
 	// sink, _ := os.OpenFile(os.DevNull, os.O_WRONLY, 0666)
-	// logger := log.New(sink, "zcash_seeder: ", log.Ldate|log.Ltime|log.Lshortfile|log.LUTC)
-	logger := log.New(os.Stdout, "zcash_seeder: ", log.Ldate|log.Ltime|log.Lshortfile|log.LUTC)
+	// logger := log.New(sink, "safecoin_seeder: ", log.Ldate|log.Ltime|log.Lshortfile|log.LUTC)
+	logger := log.New(os.Stdout, "safecoin_seeder: ", log.Ldate|log.Ltime|log.Lshortfile|log.LUTC)
 
 	// Allows connections to self for easy mocking
 	config.AllowSelfConns = true

@@ -5,16 +5,16 @@ import (
 	"errors"
 )
 
-/// Network represents the byte sequences used to identify different Zcash networks.
+/// Network represents the byte sequences used to identify different Safecoin networks.
 type Network uint32
 
 const (
-	// Mainnet identifies the Zcash mainnet
-	Mainnet Network = 0x6427e924
-	// Testnet identifies ECC's public testnet
-	Testnet Network = 0xbff91afa
+	// Mainnet identifies the Safecoin mainnet
+	Mainnet Network = 0x8fe2edf1
+	// Testnet identifies Safecoin public testnet
+	Testnet Network = 0x627E1F5A
 	// Regtest identifies the regression test network
-	Regtest Network = 0x5f3fe8aa
+	Regtest Network = 0xf5f38eaa
 )
 
 var (

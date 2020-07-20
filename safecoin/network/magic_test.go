@@ -6,12 +6,12 @@ import (
 )
 
 func TestMainnetMagic(t *testing.T) {
-	// Zcash mainnet, src/chainparams.cpp
+	// Safecoin mainnet, src/chainparams.cpp
 	var pchMessageStart [4]byte
-	pchMessageStart[0] = 0x24
-	pchMessageStart[1] = 0xe9
-	pchMessageStart[2] = 0x27
-	pchMessageStart[3] = 0x64
+	pchMessageStart[0] = 0xf1
+	pchMessageStart[1] = 0xed
+	pchMessageStart[2] = 0xe2
+	pchMessageStart[3] = 0x8f
 
 	magicBytes := Mainnet.Marshal(nil)
 

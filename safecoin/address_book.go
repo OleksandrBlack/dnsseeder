@@ -1,4 +1,4 @@
-package zcash
+package safecoin
 
 import (
 	mrand "math/rand"

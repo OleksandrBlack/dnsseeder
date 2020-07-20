@@ -1,4 +1,4 @@
-package zcash
+package safecoin
 
 import (
 	"github.com/btcsuite/btcd/peer"
