@@ -28,7 +28,7 @@ var (
 
 var defaultPeerConfig = &peer.Config{
 	UserAgentName:    "safe-seeder",
-	UserAgentVersion: "0.1.2",
+	UserAgentVersion: "0.1.3",
 	ChainParams:      nil,
 	Services:         0,
 	TrickleInterval:  time.Second * 10,
