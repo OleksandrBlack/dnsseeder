@@ -11,7 +11,7 @@ import (
 	"github.com/btcsuite/btcd/peer"
 	"github.com/btcsuite/btcd/wire"
 	"github.com/btcsuite/btclog"
-	"github.com/OleksandrBlack/dnsseeder/safecoin/network"
+	"github.com/oleksandrblack/dnsseeder/safecoin/network"
 )
 
 func TestMain(m *testing.M) {

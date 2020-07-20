@@ -13,8 +13,8 @@ import (
 	"github.com/coredns/coredns/plugin"
 	clog "github.com/coredns/coredns/plugin/pkg/log"
 
-	"github.com/OleksandrBlack/dnsseeder/safecoin"
-	"github.com/OleksandrBlack/dnsseeder/safecoin/network"
+	"github.com/oleksandrblack/dnsseeder/safecoin"
+	"github.com/oleksandrblack/dnsseeder/safecoin/network"
 )
 
 const pluginName = "dnsseed"

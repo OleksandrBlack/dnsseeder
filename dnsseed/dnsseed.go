@@ -7,7 +7,7 @@ import (
 	"github.com/coredns/coredns/plugin"
 	"github.com/coredns/coredns/request"
 	"github.com/miekg/dns"
-	"github.com/OleksandrBlack/dnsseeder/safecoin"
+	"github.com/oleksandrblack/dnsseeder/safecoin"
 )
 
 // SafecoinSeeder discovers IP addresses by asking Safecoin peers for them.

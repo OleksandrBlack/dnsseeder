@@ -14,7 +14,7 @@ import (
 	"github.com/btcsuite/btcd/peer"
 	"github.com/btcsuite/btcd/wire"
 
-	"github.com/OleksandrBlack/dnsseeder/safecoin/network"
+	"github.com/oleksandrblack/dnsseeder/safecoin/network"
 
 	"github.com/pkg/errors"
 )

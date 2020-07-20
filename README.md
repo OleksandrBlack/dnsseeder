@@ -6,7 +6,7 @@ It's written in Go and uses [btcsuite](https://github.com/btcsuite) for low-leve
 
 ## Build instructions
 
-This code cannot be used independently of CoreDNS. See [coredns-safecoin](https://github.com/OleksandrBlack/coredns-safecoin) for instructions.
+This code cannot be used independently of CoreDNS. See [coredns-safecoin](https://github.com/oleksandrblack/coredns-safecoin) for instructions.
 
 ## CoreDNS configuration
 

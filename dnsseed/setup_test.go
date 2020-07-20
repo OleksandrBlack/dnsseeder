@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/caddyserver/caddy"
-	"github.com/OleksandrBlack/dnsseeder/safecoin/network"
+	"github.com/oleksandrblack/dnsseeder/safecoin/network"
 )
 
 // TestSetup tests the various things that should be parsed by setup.

@@ -1,4 +1,4 @@
-module github.com/OleksandrBlack/dnsseeder
+module github.com/oleksandrblack/dnsseeder
 
 go 1.14
 
