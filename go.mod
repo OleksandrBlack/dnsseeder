@@ -11,5 +11,4 @@ require (
 	github.com/pkg/errors v0.9.1
 )
 
-replace github.com/OleksandrBlack/dnsseeder v0.1.2 => github.com/oleksandrblack/dnsseeder v0.1.3
 replace github.com/btcsuite/btcd => github.com/gtank/btcd v0.0.0-20191012142736-b43c61a68604
