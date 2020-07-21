@@ -227,11 +227,11 @@ func (s *Seeder) connect(p *peer.Peer) (*peer.Peer, error) {
 		case <-handshakeChan.(chan struct{}):
 			s.logger.Printf("Handshake completed with peer %s", p.Addr())
 			return p, nil
-		case <-time.After(maximumHandshakeWait):
-			p.Disconnect()
-			p.WaitForDisconnect()
-			return nil, errors.New("peer handshake started but timed out")
-		}
+		//case <-time.After(maximumHandshakeWait):
+		//	p.Disconnect()
+		//	p.WaitForDisconnect()
+		//	return nil, errors.New("peer handshake started but timed out")
+		//}
 	}
 
 	return nil, errors.New("peer was not in handshake channel")
