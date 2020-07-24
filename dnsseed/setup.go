@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"github.com/caddyserver/caddy"
-	"github.com/coredns/coredns/core/dnsserver"
-	"github.com/coredns/coredns/plugin"
-	clog "github.com/coredns/coredns/plugin/pkg/log"
+	"github.com/OleksandrBlack/coredns/core/dnsserver"
+	"github.com/OleksandrBlack/coredns/plugin"
+	clog "github.com/OleksandrBlack/coredns/plugin/pkg/log"
 
 	"github.com/oleksandrblack/dnsseeder/safecoin"
 	"github.com/oleksandrblack/dnsseeder/safecoin/network"

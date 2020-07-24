@@ -4,8 +4,8 @@ import (
 	"context"
 	"net"
 
-	"github.com/coredns/coredns/plugin"
-	"github.com/coredns/coredns/request"
+	"github.com/OleksandrBlack/coredns/plugin"
+	"github.com/OleksandrBlack/coredns/request"
 	"github.com/miekg/dns"
 	"github.com/oleksandrblack/dnsseeder/safecoin"
 )
