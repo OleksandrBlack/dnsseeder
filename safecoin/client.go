@@ -27,8 +27,8 @@ var (
 )
 
 var defaultPeerConfig = &peer.Config{
-	UserAgentName:    "safe-seeder",
-	UserAgentVersion: "0.1.3",
+	UserAgentName:    "Safecoin-Seeder",
+	UserAgentVersion: "1.0.0",
 	ChainParams:      nil,
 	Services:         0,
 	TrickleInterval:  time.Second * 10,
@@ -37,13 +37,13 @@ var defaultPeerConfig = &peer.Config{
 
 var (
 	// The minimum number of addresses we need to know about to begin serving introductions
-	minimumReadyAddresses = 10
+	minimumReadyAddresses = 5
 
 	// The maximum amount of time we will wait for a peer to complete the initial handshake
-	maximumHandshakeWait = 5 * time.Second
+	maximumHandshakeWait = 10 * time.Second
 
 	// The timeout for the underlying dial to a peer
-	connectionDialTimeout = 5 * time.Second
+	connectionDialTimeout = 10 * time.Second
 
 	// The amount of time crawler goroutines will wait after the last new incoming address
 	crawlerThreadTimeout = 30 * time.Second
@@ -52,7 +52,7 @@ var (
 	crawlerGoroutineCount = runtime.NumCPU() * 32
 
 	// The amount of space we allocate to keep things moving smoothly.
-	incomingAddressBufferSize = 4096
+	incomingAddressBufferSize = 8192
 
 	// The amount of time a peer can spend on the blacklist before we forget about it entirely.
 	blacklistDropTime = 3 * 24 * time.Hour
